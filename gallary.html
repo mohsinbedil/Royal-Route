@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour List</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="style.css">
+   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+   <script type="text/javascript" src="js/jquery.gridAccordion.min.js"></script>
+
+
+   <script type="text/javascript">
+	jQuery(document).ready(function($) {
+		// instantiate the accordion
+		$('#example1').gridAccordion({
+			width: 960,
+			height: 700,
+			responsiveMode: 'auto',
+			openedPanelWidth: 'auto',
+			openedPanelHeight: 'auto',
+			closePanelsOnMouseOut: false,
+			autoplay: false
+		});
+
+		// change the responsive mode
+		$('.controls a').click(function(event) {
+			event.preventDefault();
+
+			if ($(this).hasClass('auto')) {
+				// change the responsive mode to 'auto' and remove the 'custom-responsive' class
+				$('#example1').removeClass('custom-responsive');
+				$('#example1').gridAccordion('responsiveMode', 'auto');
+
+				// change the arrows' visibility
+				$('.auto-arrow').show();
+				$('.custom-arrow').hide();
+			} else if ($(this).hasClass('custom')) {
+				// change the responsive mode to 'custom' and add the 'custom-responsive' 
+				// class in order to use it as a reference in the CSS code
+				$('#example1').addClass('custom-responsive');
+				$('#example1').gridAccordion('responsiveMode', 'custom');
+
+				// change the arrows' visibility
+				$('.custom-arrow').show();
+				$('.auto-arrow').hide();
+			}
+		});
+	});
+</script>
+
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top ">
+	<div class="container ">
+	  <a class="navbar-brand text-white" href="index.html" >The <span class="text-info">Royal</span> Route</a>
+	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
+		<ul class="navbar-nav ml-auto text-center " id="a-show">
+		  <li class="nav-item ">
+			<a class="nav-link text-white pe-3" aria-current="page" href="index.html">Home</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link text-white pe-3 " href="destination.html">Destination</a>
+		  </li>
+		  <li class="nav-item drop-show " >
+			<a class="nav-link text-white pe-3 active"  href="gallary.html">Tour list</a>       
+			<ul class=" nav-drop bg-dark list-unstyled text-white " >
+			  <li class="nav-item ps-2"><a href="karachi.html">KARACHI</a></li>
+			  <li class="nav-item ps-2 "><a href="hyderabad.html">HYDERABAD</a></li>
+			  <li class="nav-item ps-2"><a href="sukkur.html">SUKKUR</a></li>
+			  <li class="nav-item ps-2"><a href="multan.html">MULTAN</a></li>
+			  <li class="nav-item ps-2"><a href="lahore.html">LAHORE</a></li>
+			  <li class="nav-item ps-2"><a href="bhawalpur.html">BHAWALPUR</a></li>
+			  <li class="nav-item ps-2"><a href="peshawar.html">PESHAWAR</a></li>
+			  <li class="nav-item ps-2"><a href="abbtabad.html">ABBOTABAD</a></li>
+			  <li class="nav-item ps-2"><a href="quetta.html">QUETTA</a></li>
+			  <li class="nav-item ps-2"><a href="gawadar.html">GAWADAR</a></li>
+			</ul>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link text-white pe-3" href="about.html">About Us</a>
+		  </li>
+		</ul>
+	  </div>
+	</div>
+  </nav>
+ 
+<div class="container py-5">
+	
+	<!-- Grid Accordion -->
+
+	<div id="example1" class="grid-accordion">
+		<div class="ga-panels">
+
+			<!-- Panel 1 -->
+			<div class="ga-panel">
+				<a href="karachi.html">
+					<img class="ga-background" src="img/sindh/KARACHI/city.jpeg" />
+				</a>
+
+				<div class="ga-layer ga-closed ga-white panel-counter" 
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Karachi
+				</div>
+
+				<h3 class="ga-layer ga-opened ga-black ga-padding" 
+					data-horizontal="40" data-vertical="62%" 
+					data-show-transition="left" data-hide-transition="left">
+					Karachi is the Largest city of Pakistan
+				</h3>
+				
+			</div>
+
+	        <!-- Panel 2 -->
+			<div class="ga-panel">
+				<a href="multan.html">
+					<img class="ga-background" src="img/Punjab/multan/multan.jpeg" />
+				</a>
+
+				<div class="ga-layer ga-closed ga-white panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Multan
+				</div>
+
+				<p class="ga-layer ga-opened ga-white ga-padding" 
+					data-vertical="10" data-horizontal="2%" data-width="96%" 
+					data-show-transition="down" data-show-delay="500" data-hide-transition="up">
+					Multan is a city in Punjab <span class="hide-medium-screen">, Pakistan, on the bank of the Chenab River. Multan is Pakistan's seventh largest city as per the 2017 census, and the major cultural, religious and economic centre of southern Punjab. Multan is one of the oldest continuously inhabited cities in Asia</span>
+				</p>
+			</div>
+
+	        <!-- Panel 3 -->
+			<div class="ga-panel ">
+				<a href="bhawalpur.html">
+					<img class="ga-background" src="img/Punjab/bhawalpur/bhawalpur.jpg"/>
+				</a>
+
+				<div class="ga-layer ga-closed ga-white panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Bhawalpur
+				</div>
+
+				<p class="ga-layer ga-opened ga-white ga-padding" 
+					data-horizontal="10" data-vertical="10" data-width="50%"
+					data-show-delay="700">
+					Bahawalpur is a city in the Punjab province of Pakistan <span class="hide-medium-screen">. It is the 11th most populous city of Pakistan and 6th most populous city of Punjab. Bahawalpur is the capital of Bahawalpur Division and is an important cultural and economical city of South Punjab alongwith Multan. Founded in 1748,</span>
+				</p>
+			</div>
+
+	        <!-- Panel 4 -->
+	        <div class="ga-panel">
+				<a href="lahore.html">
+					<img class="ga-background" src="img/Punjab/lahore/Lahore.webp" />
+				</a>
+
+				<div class="ga-layer ga-closed ga-white panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Lahore
+				</div>
+
+				<p class="ga-layer ga-opened ga-black ga-padding"
+					data-position="bottomLeft" data-horizontal="20" data-vertical="20"
+					data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
+					largest city of punjab 
+				</p>
+			</div>
+	       <!-- Panel 5 -->
+		   <div class="ga-panel">
+			<a href="quetta.html">
+				<img class="ga-background" src="img/balochi/quetta/quetta.jpeg" />
+			</a>
+
+			<div class="ga-layer ga-closed ga-white panel-counter"
+				 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+				 Quetta
+			</div>
+			
+			<div class="ga-layer" 
+				data-position="bottomLeft" data-horizontal="5%" data-vertical="10" data-width="90%" data-height="28%">
+
+				<p class="ga-layer ga-opened ga-black ga-padding" 
+					data-show-transition="down" data-hide-transition="up" data-show-delay="600">
+					Quetta is the tenth most populous city in Pakistan with a population of over 1.1 million. 
+				</p>
+
+				<p class="ga-layer ga-opened ga-white ga-padding hide-medium-screen" 
+					data-vertical="50"
+					data-show-transition="up" data-hide-transition="down" data-show-delay="600">
+					It is situated in the south-west of the country, surrounded by mountains. It is the capital of the province of Balochistan				</p>
+			</div>
+		</div>
+	        
+	       <!-- Panel 6 -->
+			<div class="ga-panel">
+				<a href="lahore.html">
+					<img class="ga-background" src="img/balochi/Gwadar/Gawadar.jpg" />
+				</a>
+
+				<div class="ga-layer ga-closed ga-white panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Gwadar
+				</div>
+
+				<p class="ga-layer ga-opened ga-black ga-padding"
+					data-position="bottomLeft" data-horizontal="20" data-vertical="20"
+					data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
+					The Gwadar Port is situated on the Arabian Sea at Gwadar in Balochistan province of Pakistan  
+				</p>
+			</div>
+
+	        <!-- Panel 7 -->
+	        <div class="ga-panel">
+				<a href="peshawar.html">
+					<img class="ga-background" src="img/kpk/Khyber_Pass.jpg" />
+				</a>
+
+				<div class="ga-layer ga-closed ga-white panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					Peshawar
+				</div>
+				
+				<h3 class="ga-layer ga-opened ga-white ga-padding" 
+					data-position="topRight" data-horizontal="7%" data-vertical="70%" 
+					data-show-transition="up" data-show-delay="500">
+					Peshawar is intertwined with the history of the broader Indian subcontinent. The region was known as Puruṣapura in Sanskrit, literally meaning "city of men". 
+				</h3>
+				<p class="ga-layer ga-opened ga-black ga-padding hide-medium-screen" 
+					data-position="topRight" data-horizontal="7%" data-vertical="82%" 
+					data-show-transition="up" data-show-delay="700">
+					Being among the most ancient cities of the Indian subcontinent, Peshawar has for centuries been a center of trade between West Asia, Central Asia, and the Indian subcontinent.
+				</p>
+			</div>
+
+			<!-- Panel 8 -->
+			<div class="ga-panel">
+				<a href="sukkur.html">
+					<img class="ga-background" src="img/sindh/Sukkur/lancedown bridge.jpeg" />
+				</a>
+
+				<div class="ga-layer ga-closed ga-white panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Sukkur
+				</div>
+
+				<p class="ga-layer ga-opened ga-white ga-padding" 
+					data-horizontal="center" data-vertical="44%" 
+					data-show-transition="right" data-hide-transition="left" data-show-delay="500">
+					Sukkur is the third largest city of sindh 
+				</p>
+				<p class="ga-layer ga-opened ga-black ga-padding hide-medium-screen" 
+					data-horizontal="center" data-vertical="58%" 
+					data-show-transition="left" data-show-delay="700" data-hide-transition="right" data-hide-delay="200">
+					This city is famous for its Dates
+				</p>
+			</div>
+	        
+
+	        <!-- Panel 9 -->
+	        <div class="ga-panel">
+				<a href="punjab.html">
+					<img class="ga-background" src="img/Punjab/lahore/Lahore.jpg" class="img-fluid"/>
+				</a>
+
+				<div class="ga-layer ga-closed ga-white panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Punjab
+					</div>
+				
+				<p class="ga-layer ga-opened ga-black ga-padding"
+					data-position="bottomLeft" data-horizontal="20" data-vertical="20"
+					data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
+					province of Pakistan
+				</p>
+
+				
+			</div>
+			<!-- Panel 10 -->
+			<div class="ga-panel">
+				<a href="balochistan.html">
+					<img class="ga-background" src="img/balochi/balochistan.jpeg" class="img-fluid"/>
+				</a>
+
+				<div class="ga-layer ga-closed ga-white panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					Balochistan 
+				</div>
+				
+				
+				<p class="ga-layer ga-opened ga-black ga-padding hide-medium-screen" 
+					data-position="topRight" data-horizontal="7%" data-vertical="82%" 
+					data-show-transition="up" data-show-delay="700">
+					province of Pakistn</p>
+			</div>
+
+	        <!-- Panel 11 -->
+			<div class="ga-panel">
+				<a href="peshawar.html">
+					<img class="ga-background" src="img/sindh/Hyderabad/hyd.jpeg" class="img-fluid"/>
+				</a>
+
+				<div class="ga-layer ga-closed ga-white panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					Hyderabad
+				</div>
+				
+				
+				<p class="ga-layer ga-opened ga-black ga-padding hide-medium-screen" 
+					data-position="topRight" data-horizontal="7%" data-vertical="82%" 
+					data-show-transition="up" data-show-delay="700">
+					Second largest city of sindh</p>
+			</div>
+			
+			<!-- Panel 12 -->
+			<div class="ga-panel">
+				<a href="abbtabad.html">
+					<img class="ga-background" src="img/kpk/abboatabad/abbotabad.jpg" class="img-fluid"/>
+				</a>
+
+				<div class="ga-layer ga-closed ga-white panel-counter"
+					 data-position="bottomLeft" data-horizontal="8" data-vertical="8">
+					 Abbotabad
+				</div>
+				
+				<p class="ga-layer ga-opened ga-black ga-padding"
+					data-position="bottomLeft" data-horizontal="20" data-vertical="20"
+					data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
+					
+				</p>
+
+				
+			</div>
+		</div>
+    </div>
+</div>
+
+
+
+
+	<!-- Footer -->
+<footer class="container-fliud bg-dark text-white">
+	<div class="container py-5">
+	  <div class="row">
+		<div class="col-lg-4 mb-3">
+		  <h3>The <span class="text-info">Royal</span> Route</h3>
+		  <p>Travel with us and explore Pakistan without limits.</p>
+		  <i class="fab fa-facebook pe-2"></i>
+		  <i class="fab fa-instagram pe-2"></i>
+		  <i class="fab fa-twitter pe-2"></i>
+		</div>
+		<div class="col-lg-2 col-3">
+		  <h5>About</h5>
+		  <ul class="list-unstyled">
+			<li>About Us</li>
+			<li>Features</li>
+			<li>News & Blogs</li>
+		  </ul>
+		</div>
+		<div class="col-lg-2 col-3">
+		  <h5>Contact</h5>
+		  <ul class="list-unstyled">
+			<li>Support Center</li>
+			<li>Contact Us</li>
+		  </ul>
+		</div>
+		<div class="col-lg-2 col-3">
+		  <h5>Support</h5>
+		  <ul class="list-unstyled">
+			<li>Privacy Policy</li>
+			<li>Terms & Services</li>
+		  </ul>
+		</div>
+		<div class="col-lg-2 col-3">
+		  <h5>Company</h5>
+		  <ul class="list-unstyled">
+			<li>FAQs</li>
+			<li>History</li>
+		  </ul>
+		</div>
+	  </div>
+	  <hr>
+	  <p class="text-center">&copy; 2023 The Royal Route. All Rights Reserved.</p>
+	</div>
+  </footer>
+    <!-- End of Grid Accordion -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><script>
+try {
+  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
+    return true;
+  }).catch(function(e) {
+    var carbonScript = document.createElement("script");
+    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+    carbonScript.id = "_carbonads_js";
+    document.getElementById("carbon-block").appendChild(carbonScript);
+  });
+} catch (error) {
+  console.log(error);
+}
+</script>
+
+
+
+
+
+</body>
+</html>
